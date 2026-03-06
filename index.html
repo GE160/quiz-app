@@ -1,23 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Web App</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Web App</title>
 
-  <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Quiz Web App</h1>
 
-  <main>
-    <h1>Quiz Web App</h1>
+      <!-- Start Screen -->
+      <section id="start-screen">
+        <p>Test your knowledge about programming with this quiz.</p>
+        <button id="start-btn">Start Quiz</button>
+      </section>
 
-    <p>Test your knowledge about programming with this quiz.</p>
+      <!-- Quiz Screen -->
+      <section id="quiz-screen" class="hidden">
+        <h2 id="question-text"> <!--Question will appear here--> </h2>
 
-    <button id="start-btn">Start Quiz</button>
-  </main>
+        <div id="answers-container">
+          <!-- Answers will be inserted here dynamically -->
+        </div>
 
-  <script src="scripts/app.js" type="module"></script>
+        <button id="next-btn">Next Question</button>
+      </section>
 
-</body>
+    </main>
+
+    <script src="scripts/app.js" type="module"></script>
+  </body>
 </html>
