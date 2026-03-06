@@ -4,9 +4,16 @@ import { renderQuestion } from "./quiz.js";
 const startButton = document.getElementById("start-btn");
 const startScreen = document.getElementById("start-screen");
 const quizScreen = document.getElementById("quiz-screen");
+const progressText = document.getElementById("progress-text");
 
 const nextButton = document.getElementById("next-btn");
 nextButton.addEventListener("click", nextQuestion);
+
+const resultScreen = document.getElementById("result-screen");
+const scoreText = document.getElementById("score-text");
+const restartButton = document.getElementById("restart-btn");
+
+restartButton.addEventListener("click", restartQuiz);
 
 let questions = [];
 let currentQuestionIndex = 0;
@@ -30,7 +37,10 @@ async function startQuiz() {
 
 function showQuestion() {
   selectedAnswer = null;
+
   const question = questions[currentQuestionIndex];
+
+  progressText.textContent = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
 
   renderQuestion(question, handleAnswer);
 }
@@ -62,6 +72,18 @@ function nextQuestion() {
   if (currentQuestionIndex < questions.length) {
     showQuestion();
   } else {
-    console.log("Quiz finished. Score:", score);
+    showResults();
   }
+}
+
+function showResults() {
+  quizScreen.classList.add("hidden");
+  resultScreen.classList.remove("hidden");
+
+  scoreText.textContent = `Your score: ${score} / ${questions.length}`;
+}
+
+function restartQuiz() {
+  resultScreen.classList.add("hidden");
+  startScreen.classList.remove("hidden");
 }
