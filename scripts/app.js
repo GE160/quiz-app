@@ -5,7 +5,13 @@ const startButton = document.getElementById("start-btn");
 const startScreen = document.getElementById("start-screen");
 const quizScreen = document.getElementById("quiz-screen");
 
+const nextButton = document.getElementById("next-btn");
+nextButton.addEventListener("click", nextQuestion);
+
 let questions = [];
+let currentQuestionIndex = 0;
+let selectedAnswer;
+let score = 0;
 
 startButton.addEventListener("click", startQuiz);
 
@@ -15,5 +21,47 @@ async function startQuiz() {
 
   questions = await loadQuestions();
 
-  renderQuestion(questions[0]);
+  currentQuestionIndex = 0;
+  score = 0;
+  selectedAnswer = null;
+
+  showQuestion();
+}
+
+function showQuestion() {
+  selectedAnswer = null;
+  const question = questions[currentQuestionIndex];
+
+  renderQuestion(question, handleAnswer);
+}
+
+function handleAnswer(index) {
+  selectedAnswer = index;
+
+  const buttons = document.querySelectorAll(".answer-btn");
+
+  buttons.forEach((btn) => btn.classList.remove("selected"));
+
+  buttons[index].classList.add("selected");
+}
+
+function nextQuestion() {
+  if (selectedAnswer === null) {
+    alert("Please select an answer");
+    return;
+  }
+
+  const question = questions[currentQuestionIndex];
+
+  if (selectedAnswer === question.correct) {
+    score++;
+  }
+
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex < questions.length) {
+    showQuestion();
+  } else {
+    console.log("Quiz finished. Score:", score);
+  }
 }

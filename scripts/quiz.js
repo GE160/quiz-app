@@ -1,4 +1,4 @@
-export function renderQuestion(question) {
+export function renderQuestion(question, onAnswerSelected) {
   const questionText = document.getElementById("question-text");
   const answersContainer = document.getElementById("answers-container");
 
@@ -6,7 +6,6 @@ export function renderQuestion(question) {
 
   answersContainer.innerHTML = "";
 
-  // create answer buttons
   question.answers.forEach((answer, index) => {
     const button = document.createElement("button");
 
@@ -14,7 +13,9 @@ export function renderQuestion(question) {
 
     button.classList.add("answer-btn");
 
-    button.dataset.index = index;
+    button.addEventListener("click", () => {
+      onAnswerSelected(index);
+    });
 
     answersContainer.appendChild(button);
   });
