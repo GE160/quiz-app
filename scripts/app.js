@@ -1,4 +1,5 @@
 import { loadQuestions } from "./data-loader.js";
+import { renderQuestion } from "./quiz.js";
 
 const startButton = document.getElementById("start-btn");
 const startScreen = document.getElementById("start-screen");
@@ -14,5 +15,5 @@ async function startQuiz() {
 
   questions = await loadQuestions();
 
-  console.log("Loaded questions:", questions);
+  renderQuestion(questions[0]);
 }
