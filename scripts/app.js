@@ -4,6 +4,7 @@ import { renderQuestion } from "./quiz.js";
 const startButton = document.getElementById("start-btn");
 const startScreen = document.getElementById("start-screen");
 const quizScreen = document.getElementById("quiz-screen");
+const progressText = document.getElementById("progress-text");
 
 const nextButton = document.getElementById("next-btn");
 nextButton.addEventListener("click", nextQuestion);
@@ -36,7 +37,10 @@ async function startQuiz() {
 
 function showQuestion() {
   selectedAnswer = null;
+
   const question = questions[currentQuestionIndex];
+
+  progressText.textContent = `Question ${currentQuestionIndex + 1} / ${questions.length}`;
 
   renderQuestion(question, handleAnswer);
 }
