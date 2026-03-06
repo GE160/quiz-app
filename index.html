@@ -9,16 +9,14 @@
   </head>
   <body>
     <main>
-      <!-- Start Screen -->
       <section id="start-screen">
         <h1>Quiz Web App</h1>
 
         <p>Test your knowledge about programming with this quiz.</p>
-        
+
         <button id="start-btn">Start Quiz</button>
       </section>
 
-      <!-- Quiz Screen -->
       <section id="quiz-screen" class="hidden">
         <h2 id="question-text"><!--Question will appear here--></h2>
 
@@ -27,6 +25,14 @@
         </div>
 
         <button id="next-btn">Next Question</button>
+      </section>
+
+      <section id="result-screen" class="hidden">
+        <h2>Quiz Finished</h2>
+
+        <p id="score-text">Your Score: 0 / 0</p>
+
+        <button id="restart-btn">Restart Quiz</button>
       </section>
     </main>
 
