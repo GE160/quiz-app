@@ -44,3 +44,7 @@ button:hover {
 .hidden {
   display: none;
 }
+
+.answer-btn.selected {
+  background-color: #66cc66;
+}

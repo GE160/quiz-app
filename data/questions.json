@@ -1,0 +1,24 @@
+{
+  "questions": [
+    {
+      "question": "What does HTML stand for?",
+      "answers": [
+        "Hyper Text Markup Language",
+        "High Text Machine Language",
+        "Hyper Tool Multi Language",
+        "Home Tool Markup Language"
+      ],
+      "correct": 0
+    },
+    {
+      "question": "Which language is used for styling web pages?",
+      "answers": ["HTML", "CSS", "Python", "Java"],
+      "correct": 1
+    },
+    {
+      "question": "Which language runs in the browser?",
+      "answers": ["Java", "C", "Python", "JavaScript"],
+      "correct": 3
+    }
+  ]
+}
