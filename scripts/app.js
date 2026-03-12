@@ -35,6 +35,7 @@ backButton?.addEventListener("click", () => {
 
 const shareToggleBtn = document.getElementById("share-toggle-btn");
 const shareMenu = document.getElementById("share-menu");
+const copyResultBtn = document.getElementById("copy-result-btn");
 
 shareToggleBtn?.addEventListener("click", (e) => {
   e.stopPropagation();
@@ -50,6 +51,19 @@ document.addEventListener("click", (e) => {
   if (!e.target.closest(".share-container")) {
     shareMenu?.classList.add("hidden");
   }
+});
+
+copyResultBtn?.addEventListener("click", async () => {
+  const message = getShareMessage();
+
+  try {
+    await navigator.clipboard.writeText(message);
+    alert("Result copied to clipboard!");
+  } catch (err) {
+    console.error("Failed to copy result:", err);
+  }
+
+  shareMenu.classList.add("hidden");
 });
 
 let questions = [];
@@ -124,6 +138,12 @@ function showResults() {
   resultScreen.classList.remove("hidden");
 
   scoreText.textContent = `Your score: ${score} / ${questions.length}`;
+}
+
+function getShareMessage() {
+  const percentage = Math.round((score / questions.length) * 100);
+
+  return `I scored ${score}/${questions.length} (${percentage}%) on this programming quiz! Try it yourself!`;
 }
 
 function renderReview() {
