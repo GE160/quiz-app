@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Web App</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section id="start-screen">
+        <h1>Quiz Web App</h1>
+
+        <p>Test your knowledge about programming with this quiz.</p>
+
+        <button id="start-btn">Start Quiz</button>
+      </section>
+
+      <section id="quiz-screen" class="hidden">
+        <p id="progress-text"></p>
+
+        <h2 id="question-text"><!--Question will appear here--></h2>
+
+        <div id="answers-container">
+          <!-- Answers will be inserted here dynamically -->
+        </div>
+
+        <button id="next-btn">Next Question</button>
+      </section>
+
+      <section id="result-screen" class="hidden">
+        <div class="share-container">
+          <button
+            id="share-toggle-btn"
+            class="share-icon-btn"
+            aria-label="Share results"
+          >
+            🔗
+          </button>
+
+          <div id="share-menu" class="share-menu hidden">
+            <button id="copy-result-btn">Copy Result</button>
+          </div>
+        </div>
+
+        <h2>Quiz Finished</h2>
+
+        <p id="score-text">Your Score: 0 / 0</p>
+
+        <button id="review-btn">Review Answers</button>
+
+        <button id="restart-btn">Restart Quiz</button>
+      </section>
+
+      <section id="review-screen" class="hidden">
+        <h2>Answer Review</h2>
+
+        <div id="review-container"></div>
+
+        <button id="back-btn">Back to Results</button>
+      </section>
+    </main>
+
+    <script src="scripts/app.js" type="module"></script>
+  </body>
+</html>
