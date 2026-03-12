@@ -15,10 +15,30 @@ const restartButton = document.getElementById("restart-btn");
 
 restartButton.addEventListener("click", restartQuiz);
 
+const reviewButton = document.getElementById("review-btn");
+const reviewScreen = document.getElementById("review-screen");
+const backButton = document.getElementById("back-btn");
+
+reviewButton?.addEventListener("click", () => {
+  resultScreen.classList.add("hidden");
+
+  reviewScreen.classList.remove("hidden");
+
+  renderReview();
+});
+
+backButton?.addEventListener("click", () => {
+  reviewScreen.classList.add("hidden");
+
+  resultScreen.classList.remove("hidden");
+});
+
 let questions = [];
 let currentQuestionIndex = 0;
 let selectedAnswer;
 let score = 0;
+
+let userAnswers = [];
 
 startButton.addEventListener("click", startQuiz);
 
@@ -31,6 +51,8 @@ async function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
   selectedAnswer = null;
+
+  userAnswers = [];
 
   showQuestion();
 }
@@ -63,6 +85,8 @@ function nextQuestion() {
 
   const question = questions[currentQuestionIndex];
 
+  userAnswers.push(selectedAnswer);
+
   if (selectedAnswer === question.correct) {
     score++;
   }
@@ -81,6 +105,34 @@ function showResults() {
   resultScreen.classList.remove("hidden");
 
   scoreText.textContent = `Your score: ${score} / ${questions.length}`;
+}
+
+function renderReview() {
+  const reviewContainer = document.getElementById("review-container");
+
+  reviewContainer.innerHTML = "";
+
+  questions.forEach((question, index) => {
+    const userAnswerIndex = userAnswers[index];
+
+    const userAnswer = question.answers[userAnswerIndex];
+
+    const correctAnswer = question.answers[question.correct];
+
+    const div = document.createElement("div");
+
+    div.classList.add("review-item");
+
+    div.innerHTML = `
+      <h3>Question ${index + 1}</h3>
+      <p>${question.question}</p>
+      <p><strong>Your answer:</strong> ${userAnswer}</p>
+      <p><strong>Correct answer:</strong> ${correctAnswer}</p>
+      <p class="explanation">${question.explanation}</p>
+    `;
+
+    reviewContainer.appendChild(div);
+  });
 }
 
 function restartQuiz() {

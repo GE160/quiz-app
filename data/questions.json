@@ -8,17 +8,20 @@
         "Hyper Tool Multi Language",
         "Home Tool Markup Language"
       ],
-      "correct": 0
+      "correct": 0,
+      "explanation": "HTML stands for HyperText Markup Language and is used to structure web pages."
     },
     {
       "question": "Which language is used for styling web pages?",
       "answers": ["HTML", "CSS", "Python", "Java"],
-      "correct": 1
+      "correct": 1,
+      "explanation": "CSS (Cascading Style Sheets) is used to style HTML elements."
     },
     {
       "question": "Which language runs in the browser?",
       "answers": ["Java", "C", "Python", "JavaScript"],
-      "correct": 3
+      "correct": 3,
+      "explanation": "JavaScript runs directly in the browser and powers interactive websites."
     }
   ]
 }
