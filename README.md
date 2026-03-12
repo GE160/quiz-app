@@ -14,7 +14,6 @@ A simple, fully client-side quiz application designed to test programming knowle
 6. [Data Format](#data-format)
 7. [Development](#development)
 8. [Customization](#customization)
-9. [Known Limitations](#known-limitations)
 
 ---
 
