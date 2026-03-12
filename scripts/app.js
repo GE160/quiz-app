@@ -89,6 +89,34 @@ function showResults() {
   scoreText.textContent = `Your score: ${score} / ${questions.length}`;
 }
 
+function renderReview() {
+  const reviewContainer = document.getElementById("review-container");
+
+  reviewContainer.innerHTML = "";
+
+  questions.forEach((question, index) => {
+    const userAnswerIndex = userAnswers[index];
+
+    const userAnswer = question.answers[userAnswerIndex];
+
+    const correctAnswer = question.answers[question.correct];
+
+    const div = document.createElement("div");
+
+    div.classList.add("review-item");
+
+    div.innerHTML = `
+      <h3>Question ${index + 1}</h3>
+      <p>${question.question}</p>
+      <p><strong>Your answer:</strong> ${userAnswer}</p>
+      <p><strong>Correct answer:</strong> ${correctAnswer}</p>
+      <p class="explanation">${question.explanation}</p>
+    `;
+
+    reviewContainer.appendChild(div);
+  });
+}
+
 function restartQuiz() {
   resultScreen.classList.add("hidden");
   startScreen.classList.remove("hidden");
