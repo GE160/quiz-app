@@ -33,6 +33,25 @@ backButton?.addEventListener("click", () => {
   resultScreen.classList.remove("hidden");
 });
 
+const shareToggleBtn = document.getElementById("share-toggle-btn");
+const shareMenu = document.getElementById("share-menu");
+
+shareToggleBtn?.addEventListener("click", (e) => {
+  e.stopPropagation();
+
+  if (shareMenu.classList.contains("hidden")) {
+    shareMenu.classList.remove("hidden");
+  } else {
+    shareMenu.classList.add("hidden");
+  }
+});
+
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".share-container")) {
+    shareMenu?.classList.add("hidden");
+  }
+});
+
 let questions = [];
 let currentQuestionIndex = 0;
 let selectedAnswer;
