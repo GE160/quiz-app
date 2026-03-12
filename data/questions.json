@@ -22,6 +22,70 @@
       "answers": ["Java", "C", "Python", "JavaScript"],
       "correct": 3,
       "explanation": "JavaScript runs directly in the browser and powers interactive websites."
+    },
+    {
+      "question": "What does CSS stand for?",
+      "answers": [
+        "Computer Style Sheets",
+        "Creative Style Sheets",
+        "Cascading Style Sheets",
+        "Colorful Style Sheets"
+      ],
+      "correct": 2,
+      "explanation": "CSS stands for Cascading Style Sheets and controls the appearance of web pages."
+    },
+    {
+      "question": "What does JSON stand for?",
+      "answers": [
+        "Java Standard Object Notation",
+        "JavaScript Object Notation",
+        "Java Syntax Object Notation",
+        "Java Source Open Network"
+      ],
+      "correct": 1,
+      "explanation": "JSON stands for JavaScript Object Notation and is used to exchange data."
+    },
+    {
+      "question": "Which HTTP method is commonly used to retrieve data?",
+      "answers": ["POST", "GET", "PUT", "DELETE"],
+      "correct": 1,
+      "explanation": "GET is used to retrieve data from a server."
+    },
+    {
+      "question": "Which company created JavaScript?",
+      "answers": ["Microsoft", "Sun Microsystems", "Netscape", "Google"],
+      "correct": 2,
+      "explanation": "JavaScript was originally created at Netscape by Brendan Eich."
+    },
+    {
+      "question": "Which tool is commonly used for version control?",
+      "answers": ["Docker", "Git", "Node", "NPM"],
+      "correct": 1,
+      "explanation": "Git is the most widely used version control system."
+    },
+    {
+      "question": "What command uploads local commits to a remote Git repository?",
+      "answers": ["git commit", "git clone", "git push", "git merge"],
+      "correct": 2,
+      "explanation": "git push sends your local commits to the remote repository."
+    },
+    {
+      "question": "Which HTML tag is used to create a hyperlink?",
+      "answers": ["<link>", "<href>", "<a>", "<url>"],
+      "correct": 2,
+      "explanation": "The <a> (anchor) tag is used to create hyperlinks in HTML."
+    },
+    {
+      "question": "Which symbol is used to select an id in CSS?",
+      "answers": ["#", ".", "*", "&"],
+      "correct": 0,
+      "explanation": "The # symbol selects elements by their id in CSS."
+    },
+    {
+      "question": "Which JavaScript function is used to display text in the console?",
+      "answers": ["console.log()", "print()", "echo()", "log.console()"],
+      "correct": 0,
+      "explanation": "console.log() prints messages to the browser console for debugging."
     }
   ]
 }
