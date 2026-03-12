@@ -15,6 +15,24 @@ const restartButton = document.getElementById("restart-btn");
 
 restartButton.addEventListener("click", restartQuiz);
 
+const reviewButton = document.getElementById("review-btn");
+const reviewScreen = document.getElementById("review-screen");
+const backButton = document.getElementById("back-btn");
+
+reviewButton?.addEventListener("click", () => {
+  resultScreen.classList.add("hidden");
+
+  reviewScreen.classList.remove("hidden");
+
+  renderReview();
+});
+
+backButton?.addEventListener("click", () => {
+  reviewScreen.classList.add("hidden");
+
+  resultScreen.classList.remove("hidden");
+});
+
 let questions = [];
 let currentQuestionIndex = 0;
 let selectedAnswer;
