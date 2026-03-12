@@ -20,6 +20,8 @@ let currentQuestionIndex = 0;
 let selectedAnswer;
 let score = 0;
 
+let userAnswers = [];
+
 startButton.addEventListener("click", startQuiz);
 
 async function startQuiz() {
@@ -31,6 +33,8 @@ async function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
   selectedAnswer = null;
+
+  userAnswers = [];
 
   showQuestion();
 }
@@ -62,6 +66,8 @@ function nextQuestion() {
   }
 
   const question = questions[currentQuestionIndex];
+
+  userAnswers.push(selectedAnswer);
 
   if (selectedAnswer === question.correct) {
     score++;
