@@ -212,7 +212,7 @@ h1 {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .review-item {
@@ -268,4 +268,71 @@ h1 {
   transform: translateY(0);
 
   box-shadow: none;
+}
+
+.share-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.share-icon-btn {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  background: #667eea;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-icon-btn:hover {
+  background: #5a67d8;
+}
+
+.share-menu {
+  position: absolute;
+
+  top: 50px;
+  right: 0;
+
+  background: white;
+
+  border-radius: 10px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  width: 160px;
+}
+
+.share-menu button {
+  background: #f3f4ff;
+  border: none;
+
+  padding: 8px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.share-menu button:hover {
+  background: #e4e7ff;
 }
